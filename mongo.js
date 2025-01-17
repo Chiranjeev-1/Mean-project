@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://127.0.0.1:27017/react-login-tut')
+mongoose.connect('mongodb+srv://chiranjeevmishra4:<db_password>@cluster0.y12b5.mongodb.net/')
 
 .then(() => {
     console.log('MongoDB connected');
