@@ -7,8 +7,7 @@ app.use(express.urlencoded({extended:true}))
 
 const corsOptions = {
     origin:'https://mean-project-xi.vercel.app/',
-    methods:'GET,POST',
-    allowedHeaders:'Content-Type,Authorization'
+    methods:['GET','POST']
 
 }
 
