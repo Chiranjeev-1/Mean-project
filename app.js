@@ -4,7 +4,15 @@ const cors = require('cors')
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use(cors())
+
+const corsOptions = {
+    origin:'https://mean-project-xi.vercel.app/',
+    methods:'GET,POST',
+    allowedHeaders:'Content-Type,Authorization'
+
+}
+
+app.use(cors(corsOptions))
 
 
 const collection = database.collection
@@ -128,8 +136,8 @@ app.get('/home/:userEmail', async (req, res) => {
 
 
 
+const PORT = 8000 || process.env.PORT
 
-
-app.listen(8000,() =>{
-    console.log('port connected');
+app.listen(PORT,() =>{
+    console.log(`port connected at ${PORT}`);
 })
