@@ -1,17 +1,21 @@
 const express = require('express')
 const database = require('./mongo')
 const cors = require('cors')
+const { default: mongoose } = require('mongoose')
 const app = express()
-app.use(express.json())
+
 app.use(express.urlencoded({extended:true}))
 
 const corsOptions = {
     origin:'https://mean-project-xi.vercel.app',
-    methods:['GET','POST']
+    methods:['GET','POST'],
+    Credentials:true
 
 }
 
 app.use(cors(corsOptions))
+app.use(express.json())
+mongoose.connect('mongodb+srv://chiranjeevmishra4:1234@cluster0.y12b5.mongodb.net/react-login-tut?retryWrites=true&w=majority')
 
 
 const collection = database.collection
@@ -141,16 +145,4 @@ app.listen(PORT,() =>{
     console.log(`port connected at ${PORT}`);
 })
 
-// mongo db 
-const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGO_URI,{
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
 
-.then(() => {
-    console.log('MongoDB connected');
-  })
-.catch((err) => {
-    console.error('MongoDB connection failed:', err);
-  });

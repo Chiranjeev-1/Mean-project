@@ -1,4 +1,16 @@
-import mongoose from "app.js";
+// mongo db 
+const mongoose = require('mongoose')
+mongoose.connect(process.env.MONGO_URI,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+
+.then(() => {
+    console.log('MongoDB connected');
+  })
+.catch((err) => {
+    console.error('MongoDB connection failed:', err);
+  });
 const newSchema = new mongoose.Schema({
     email:{
         type:String,
