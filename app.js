@@ -6,7 +6,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 const corsOptions = {
-    origin:'https://mean-project-xi.vercel.app/',
+    origin:'https://mean-project-xi.vercel.app',
     methods:['GET','POST']
 
 }
