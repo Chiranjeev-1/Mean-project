@@ -7,7 +7,7 @@ const app = express()
 app.use(express.urlencoded({extended:true}))
 
 const corsOptions = {
-    origin:'https://mean-project-xi.vercel.app',
+    origin:'*',
     methods:['GET','POST'],
     credentials:true
 
@@ -15,7 +15,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(express.json())
-mongoose.connect('mongodb+srv://chiranjeevmishra4:1234@cluster0.y12b5.mongodb.net/react-login-tut?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 const collection = database.collection
