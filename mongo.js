@@ -1,9 +1,6 @@
 // mongo db 
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGO_URI,{
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect("mongodb+srv://chiranjeevmishra4:1234@cluster0.y12b5.mongodb.net/react-login-tut?retryWrites=true&w=majority")
 
 .then(() => {
     console.log('MongoDB connected');
