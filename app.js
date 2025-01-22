@@ -7,7 +7,7 @@ const app = express()
 app.use(express.urlencoded({extended:true}))
 
 const corsOptions = {
-    origin:'*',
+    origin:'https://mean-project-ten.vercel.app/',
     methods:['GET','POST'],
     credentials:true
 

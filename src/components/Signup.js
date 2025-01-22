@@ -16,7 +16,7 @@ function Signup(){
         e.preventDefault();
         try{
 
-            await axios.post(`https://mean-project-xi.vercel.app/signup`,{
+            await axios.post(`https://mean-project-ten.vercel.app/signup`,{
                 email,password
             })
             .then(res=>{

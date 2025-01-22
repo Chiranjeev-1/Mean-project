@@ -32,7 +32,7 @@ const Home = (req,res) => {
     try {
         
 
-      const response = await axios.get(`http://127.0.0.1:8000/home/${userEmail}`);
+      const response = await axios.get(`https://mean-project-ten.vercel.app//home/${userEmail}`);
       setHyperlinksString(JSON.stringify(response.data));
       setHyperlinks(JSON.parse(JSON.stringify(response.data)));
       console.log(typeof(response.data))
@@ -51,7 +51,7 @@ const Home = (req,res) => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post(`http://127.0.0.1:8000/home`, { link: newLink , linkname: linkname ,user:userEmail});
+      await axios.post(`https://mean-project-ten.vercel.app/home`, { link: newLink , linkname: linkname ,user:userEmail});
       setNewLink('');
       setlinkname('');
       fetchHyperlinks();
